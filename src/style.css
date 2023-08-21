@@ -1,0 +1,31 @@
+h1{
+    text-align: center;
+    border: black solid;
+}
+
+.barre_sup{
+    justify-content: center;
+    display: flex;
+}
+
+.text_sup{
+    
+}
+
+.bouton_sup{
+
+}
+
+
+
+
+.list{
+
+}
+
+.todo{
+    display: flex;
+    border: red solid;
+    justify-content: center;
+}
+
