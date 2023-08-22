@@ -8,19 +8,9 @@ h1{
     display: flex;
 }
 
-.text_sup{
-    
-}
-
-.bouton_sup{
-
-}
-
-
-
-
-.list{
-
+.cachee{
+    background-color: gray ;
+    opacity: 0.90;
 }
 
 .todo{
