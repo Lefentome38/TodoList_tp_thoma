@@ -1,21 +1,21 @@
+let index = 0
+const barre_todo_tete = document.createElement("div") //une dive qui contient les éléments de la barre_sup
+    barre_todo_tete.classList.add("barre_de_tete")
+    document.body.appendChild(barre_todo_tete)
 
-const barre_todo_sup = document.createElement("div") //une dive qui contient les éléments de la barre_sup
-    barre_todo_sup.classList.add("barre_sup")
-    document.body.appendChild(barre_todo_sup)
+const input_tete = document.createElement("input") //barre de texte 
+    input_tete.classList.add("texte_de_tete")
+    input_tete.setAttribute("type","text")
+    barre_todo_tete.appendChild(input_tete)
 
-const input_sup = document.createElement("input") //barre de texte 
-    input_sup.classList.add("texte_sup")
-    input_sup.setAttribute("type","text")
-    barre_todo_sup.appendChild(input_sup)
-
-const button_sup = document.createElement("button") //le bouton save
-    button_sup.innerText = "save"
-    button_sup.classList.add("button_sup")
-    button_sup.setAttribute("type","button")
-    button_sup.addEventListener("click",() =>{
+const button_tete = document.createElement("button") //le bouton save
+    button_tete.innerText = "save"
+    button_tete.classList.add("button_de_tete")
+    button_tete.setAttribute("type","button")
+    button_tete.addEventListener("click",() =>{
         todo_rajout();
    });
-    barre_todo_sup.appendChild(button_sup)
+    barre_todo_tete.appendChild(button_tete)
 
 const body_list = document.createElement("div") //une dive qui contient les todos
     body_list.classList.add("list")
@@ -24,6 +24,8 @@ const body_list = document.createElement("div") //une dive qui contient les todo
 
 function todo_rajout() {
     const div_todo = document.createElement("div") //les dives qui contient les infos
+    index++ 
+    div_todo.setAttribute("id",index.toString())
     div_todo.classList.add("todo")
 
     const chek_todo = document.createElement("input") //la checkbox de la .todo
@@ -33,23 +35,33 @@ function todo_rajout() {
 
     const text_todo = document.createElement("p") //la text de la .todo
     text_todo.classList.add("text_todo")
-    text_todo.style.marginRight = "5%"
-    text_todo.style.marginLeft = "5%"
-    text_todo.innerText = input_sup.value
+    text_todo.innerText = input_tete.value
     div_todo.appendChild(text_todo)
 
-    input_sup.value = ""
+    input_tete.value = ""
 
-    const button_todo = document.createElement("button") //la bouton de la .todo
-    button_todo.innerText = "delete"
-    button_todo.classList.add("button_todo")
-    button_todo.setAttribute("type","button")
-    div_todo.appendChild(button_todo)
+    const button_delete_todo = document.createElement("button") //la bouton de la .todo
+    button_delete_todo.innerText = "delete"
+    button_delete_todo.classList.add("button_todo")
+    button_delete_todo.setAttribute("type","button")
+    div_todo.appendChild(button_delete_todo)
+
+        button_delete_todo.addEventListener("click", () => {
+            if (div_todo.getAttribute("id") === div_todo.getAttribute("id")) {
+                div_todo.remove()
+            }
+
+            else {
+                console.log("non");
+                
+            }
+        })
+            
 
     body_list.appendChild(div_todo)
 }
 
-button_sup.addEventListener("click",() =>{
+button_tete.addEventListener("click",() =>{
     
 });
 
