@@ -88,13 +88,15 @@ function todo_rajout() {
     chek_todo.setAttribute("type","checkbox")
     div_todo.appendChild(chek_todo)
 
-    chek_todo.addEventListener("click", () => {
+    chek_todo.addEventListener("click", async () => {
         text_todo.classList.toggle("cachee")
+        chek_BDD(text_todo)
     })
 
     const text_todo = document.createElement("p") //la text de la .todo
     text_todo.classList.add("text_todo")
     text_todo.innerText = input_tete.value
+
     div_todo.appendChild(text_todo)
 
     async function DeleteBDD() {
@@ -118,8 +120,12 @@ function todo_rajout() {
 
     body_list.appendChild(div_todo)
 
+}
 
-
+async function chek_BDD(text_todo:any) {
+    const res = await fetch('http://localhost:3030/checkbox/' + text_todo)
+    let message = await res.text()
+    console.log(message);
 }
 
 
