@@ -1,12 +1,19 @@
 h1{
+    padding: 2%;
+    margin: 2% 0% 2% 0%;
     text-align: center;
-    border: black solid;
+    border: black solid 4px;
 }
 
-.barre_sup{
+.barre_de_tete{
     justify-content: center;
     display: flex;
 }
+
+.button_clear{
+    opacity: 0.60;
+}
+
 
 .cachee{
     background-color: gray ;
@@ -14,6 +21,7 @@ h1{
 }
 
 .todo{
+    margin: 2% 0% 0% 0%;
     display: flex;
     border: red solid;
     justify-content: center;
